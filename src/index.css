@@ -1,0 +1,35 @@
+
+
+@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+body{
+  font-family: 'Italianno', cursive;
+} */
+li:has(.active){
+  background: #ffa230e5;
+  border-color: transparent;
+  color: white;
+  filter: drop-shadow(0 12px 15px #f29724);
+
+
+}
+
+
+@layer utilities{
+  .loading{
+    
+    background-size: 100% 100%;
+    animation: wave 1s  ease infinite ;
+  }
+
+  
+}
+@keyframes wave {
+    0%{
+      background-position: 0% 0%;
+    }
+    100%{
+      background-position: 100% 0;
+    }
+  }
