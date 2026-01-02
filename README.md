@@ -1,16 +1,76 @@
-# React + Vite
+...existing code...
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Recipe — React + Vite
 
-Currently, two official plugins are available:
+A small React application (Vite) that lists and shows recipes using TheMealDB API. Demonstrates routing, API fetching with axios, simple animations with GSAP, and Tailwind CSS for styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Browse recipes by category, area (cuisine) and ingredient
+- View recipe details (ingredients, instructions, video)
+- Responsive UI with a grid of cards
+- Loading states and simple GSAP animations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React + Vite
+- Tailwind CSS
+- Axios for HTTP requests
+- GSAP for small animations
+- TheMealDB (public API)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Quick start
+
+Prerequisites:
+
+- Node.js 16+ and npm
+
+Install and run:
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project structure (important files)
+
+- src/main.jsx — React entry
+- src/App.jsx — router setup
+- src/constants.js — API endpoint constants
+- src/pages/
+  - Home.jsx
+  - Area.jsx
+  - Ingredients.jsx
+  - NotFound.jsx
+- src/components/
+  - recipeCard.jsx
+  - mainRecipe.jsx
+  - Loading.jsx
+  - cards/LoadingCard.jsx
+  - navbar/Nav.jsx
+
+## API
+
+Endpoints are centralized in `src/constants.js` and use TheMealDB:
+
+- Search by name / char / id
+- Filter by category / area / ingredient
+
+## Usage notes
+
+- Use the area list or the mobile select to filter by cuisine.
+- Clicking a recipe card opens the detailed recipe view.
+- Initial load fetches sample recipes.
+
+## Contributing
+
+- Add components under `src/components/`.
+- Keep API endpoints in `src/constants.js`.
+- Open an issue or submit
