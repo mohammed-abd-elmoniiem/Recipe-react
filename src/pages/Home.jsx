@@ -57,7 +57,7 @@ function Home() {
           <ul className="category flex-wrap hidden items-center justify-center sm:flex gap-2">
 
             {categories.map((category)=>(<li key={category.strCategory}
-            className='border border-neutral-700 p-2 rounded-4xl cursor-pointer '
+            className='border border-neutral-200 p-2 rounded-4xl cursor-pointer '
 
             onClick={(e) => {
               gsap.to('ul.category li',{
@@ -67,7 +67,7 @@ function Home() {
 
               gsap.to(e.target,{
                 duration:0.2,
-                backgroundColor: 'gray'
+                backgroundColor: '#ffa230'
               })
 
               console.log(category.strCategory)

@@ -34,7 +34,7 @@ function Ingredient({getIngredient}) {
     
         >
           {Ingredients && Ingredients.map(ingredient => (
-            <li className='p-1 px-2 rounded-4xl cursor-pointer drop-shadow-sm drop-shadow-amber-200' key={ingredient.idIngredient}
+            <li className='p-1 px-2 border-[1px] border-neutral-200 rounded-4xl cursor-pointer drop-shadow-sm drop-shadow-amber-200' key={ingredient.idIngredient}
             onClick={(e) => {
               getIngredient(ingredient.strIngredient);
 

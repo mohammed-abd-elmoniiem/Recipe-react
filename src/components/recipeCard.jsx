@@ -13,7 +13,7 @@ function RecipeCard(props) {
 
         </div>
 
-        <div className="img bg-neutral-300 absolute -top-4 w-3/4  aspect-square  flex items-center justify-center rounded-full overflow-hidden drop-shadow-2xl   duration-500 group-hover:rotate-360">
+        <div className="img bg-neutral-300 absolute -top-4 w-3/4  aspect-square  flex items-center justify-center rounded-full overflow-hidden drop-shadow-2xl   duration-500 group-hover:rotate-360 animating">
             <img src={props.meal.strMealThumb} alt="image" className=" object-cover   w-full  h-full " />
 
         </div>
@@ -21,13 +21,13 @@ function RecipeCard(props) {
         <p className="text-[13px]">{props.meal.strMeal}</p>
 
         {
-          props.meal.strArea &&<p className="flex gap-2 items-center">
+          props.meal.strArea &&<p className="flex gap-2 items-center text-amber-500">
              <i className="fa fa-earth"></i>
              <span>{props.meal.strArea}</span>
         </p>
         }
         
-        <button className="bg-green-500 text-white px-3 py-1 rounded-full"
+        <button className="bg-amber-500 text-white px-3 py-1 rounded-full"
         onClick={(e)=>{
             navigate('/recipe/'+props.meal.idMeal)
         }}>
