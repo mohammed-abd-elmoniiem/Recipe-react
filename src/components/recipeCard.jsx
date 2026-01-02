@@ -19,10 +19,14 @@ function RecipeCard(props) {
         </div>
 
         <p className="text-[13px]">{props.meal.strMeal}</p>
-        <p className="flex gap-2 items-center">
+
+        {
+          props.meal.strArea &&<p className="flex gap-2 items-center">
              <i className="fa fa-earth"></i>
              <span>{props.meal.strArea}</span>
         </p>
+        }
+        
         <button className="bg-green-500 text-white px-3 py-1 rounded-full"
         onClick={(e)=>{
             navigate('/recipe/'+props.meal.idMeal)

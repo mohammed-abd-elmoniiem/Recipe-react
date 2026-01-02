@@ -1,11 +1,11 @@
 
 
 @import "tailwindcss";
-/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 body{
   font-family: 'Italianno', cursive;
-} */
+}
 li:has(.active){
   background: #ffa230e5;
   border-color: transparent;
@@ -25,11 +25,18 @@ li:has(.active){
 
   
 }
+
+.animating {
+  background: linear-gradient(90deg, #9e9e9e 0%, #d3d3d3 50%, #979797 100%) center / 200% 30px ;
+
+  animation: wave 1.5s ease alternate-reverse infinite;
+}
+
 @keyframes wave {
     0%{
-      background-position: 0% 0%;
+        background-position: 0 0;
     }
     100%{
-      background-position: 100% 0;
+        background-position: 100% 0;
     }
   }

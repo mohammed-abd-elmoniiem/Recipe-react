@@ -2,11 +2,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router';
 import { API_SEARCH_BY_ID } from '../constants';
 import axios from 'axios';
+import LoadingCard from './cards/LoadingCard';
 
 function MainRecipe() {
     const parems = useParams();
-    
-    
+
+    function splitInstructions(instructions) {
+        const arr = instructions.split('step').map((step, index) => {
+            return <li className='border-b-2 border-b-neutral-200 p-2' key={index}> {step.trim()}</li>;
+        });
+
+        console.log(arr);
+
+        return arr;
+    }
 
     const [meal, setmeal] = useState(null);
     const ingredients = useRef([]);
@@ -44,11 +53,14 @@ function MainRecipe() {
 
     {
         meal == null ?
-        <div className="">loading</div>
+        <div className="min-h-screen p-10 ">
+            <LoadingCard/>
+        </div>
+        
         :
          <div className="main-recipe p-10 grid lg:grid-cols-3 gap-5 bg-neutral-100">
 
-        <h2 className="col-start-1 -col-end-1">{meal.strMeal}</h2>
+        <h2 className="col-start-1 -col-end-1 text-4xl sm:text-7xl bg-linear-to-r from-amber-500 to-red-500 bg-clip-text  text-transparent font-bold">{meal.strMeal}</h2>
         <div className="header flex flex-col items-center gap-2">
             <img src={meal.strMealThumb} alt="" className="rounded-3xl" />
 
@@ -69,9 +81,9 @@ function MainRecipe() {
         </div>
 
         <div className="instructions">
-            <p className="">    
-                {meal?.strInstructions}
-            </p>
+            <ul className="">
+                {splitInstructions(meal?.strInstructions)}
+            </ul>
         </div>
 
         <div className="ingredients bg-white capitalize p-5 rounded-2xl">

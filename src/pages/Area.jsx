@@ -8,7 +8,7 @@ import { API_FILTER_AREA, API_FILTER_CATEGORY, API_SEARCH_BY_CHAR } from '../con
 
 import axios from 'axios'
 import gsap from 'gsap'
-import { Outlet } from 'react-router'
+import Loading from '../components/Loading'
 
 function Area() {
 
@@ -96,15 +96,15 @@ function Area() {
           </select>
         </div>
 
-        {/* <div className="bg-green-700 w-full">
-            <LoadingCard/>
-        </div> */}
-
-        <div className="bg-neutral-100 p-5 w-full min-h-screen grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 justify-center">
+       {
+         meals == null ?
+         <Loading/>
+         :
+          <div className="bg-neutral-100 p-5 w-full min-h-screen grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 justify-center">
          
 
           {
-            meals &&
+           
             meals.map(meal => (
               <RecipeCard key={meal.idMeal} meal={meal} />
             ))
@@ -112,9 +112,9 @@ function Area() {
         
 
         </div>
+       }
 
-        {/* <MainRecipe/> */}
-
+    
 
     </section>
     

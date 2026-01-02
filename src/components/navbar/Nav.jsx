@@ -53,7 +53,7 @@ function Nav() {
       
     }
   return (
-    <nav  className="sticky top-0   py-2 z-50 h-screen   flex items-start bg-neutral-100" >
+    <nav  className="sticky top-0   py-2 z-50 h-screen   flex items-start bg-white" >
 
       {/* dispaly ans hidden nav in mobile */}
         <div
