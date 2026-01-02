@@ -7,14 +7,23 @@ function MainLayout() {
   return (
     <>
 
-    <main className="relative min-h-screen h-[200vh]">
+    <main className="relative min-h-screen bg-neutral-100 py-3 ">
 
-        <div className="container mx-auto h-full">
+        <div className="containe mx-auto h-full flex">
 
+          <div className="relative">
             <Nav/>
-            <Outlet/>
+          </div>
+
+            
+            <div className="grow">
+                <Outlet/>
 
             <Footer/>
+            </div>
+
+
+          
 
         </div>
 

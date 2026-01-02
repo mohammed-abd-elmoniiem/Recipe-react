@@ -1,5 +1,5 @@
 export const API_SEARCH_BY_NAME = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
-export const API_SEARCH_BY_CHAR = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
+export const API_SEARCH_BY_CHAR = 'https://www.themealdb.com/api/json/v1/1/search.php?f=';
 export const API_SEARCH_BY_ID = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 export const randomMeal = `https://www.themealdb.com/api/json/v1/1/random.php`

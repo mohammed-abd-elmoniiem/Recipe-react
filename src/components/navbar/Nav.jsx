@@ -14,18 +14,38 @@ function Nav() {
     const ulRef = useRef();
     const toggleIconRef = useRef()
 
+    // window.addEventListener('click',(e)=>{
+
+    //    gsap.to(ulRef.current,{
+    //     delay:0.2,
+    //     duration:0.5,
+    //     left: -400,
+    //     // right: ulRef.current.classList.contains('shown') ?0  : '-100%',
+
+    //     onComplete:()=>{
+    //       ulRef.current.classList.toggle('shown')
+          
+    //     }
+
+    //   })
+
+    // })
+
     function dispalyNav(){
 
-      
+      toggleIconRef.current.classList.toggle('fa-bars')
+      toggleIconRef.current.classList.toggle('fa-close')
 
-      
+    
 
       gsap.to(ulRef.current,{
         delay:0.2,
-        duration:0.5,
-        translateX: ulRef.current.classList.contains('-translate-x-full')?0:'-100%',
+        duration:0.2,
+        left: ulRef.current.classList.contains('shown') ? -400: '100%',
+        // right: ulRef.current.classList.contains('shown') ?0  : '-100%',
+
         onComplete:()=>{
-          ulRef.current.classList.toggle('-translate-x-full')
+          ulRef.current.classList.toggle('shown')
           
         }
 
@@ -33,15 +53,20 @@ function Nav() {
       
     }
   return (
-    <nav  className="sticky top-0  py-2  w-fill    bg-[#ffffff15] flex items-center " >
+    <nav  className="sticky top-0   py-2 z-50 h-screen   flex items-start bg-neutral-100" >
 
       {/* dispaly ans hidden nav in mobile */}
         <div
-         className="icons  text-gray-500 text-lg w-12 h-12 rounded-full flex justify-center items-center  "
-         onClick={dispalyNav}
-        
-        >
-          <i className="fa fa-bars"></i>
+         className="icons sticky top-0   sm:hidden text-gray-500 text-lg w-8 h-8 rounded-full flex justify-center items-center " 
+         onClick={(e)=>{
+          dispalyNav()
+
+        }
+        }
+         >
+          <i className="fa fa-bars " ref={toggleIconRef} ></i>
+         
+
         </div>
 
 
@@ -59,12 +84,12 @@ function Nav() {
 
         onClick={(e)=>{
           if(e.target == ulRef.current){
-          dispalyNav()
+    
           }
         }}
-        
-        className=" backdrop-blur-lg absolute top-0 h-screen -translate-x-full sm:translate-x-0 z-20  w-full">
-            <ul  className=" bg-white w-fit h-full flex flex-col gap-4 px-3" >
+
+        className="border-emerald-500  bg-neutral-100 absolute right-full top-0 bottom-0 sm:static  z-40 ">
+            <ul  className=" sticky top-0  w-fit h-full flex flex-col gap-4 px-3 bg-neutral-100" >
 
                 <li className="">
                         
